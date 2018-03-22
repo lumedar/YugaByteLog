@@ -1,0 +1,38 @@
+I0322 13:26:31.446630 22266 run-with-timeout.cc:111] Core file size limits set by parent process: current=18446744073709551615, max=18446744073709551615. Trying to set both to infinity.
+I0322 13:26:31.446774 22266 run-with-timeout.cc:130] Starting child process with a timeout of 601 seconds
+I0322 13:26:31.447782 22266 run-with-timeout.cc:139] Child process pid: 22395
+Note: Google Test filter = RpcStubTest.IPv6
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from RpcStubTest
+[ RUN      ] RpcStubTest.IPv6
+I0322 13:26:31.499866 22395 test_util.cc:115] Environment variable ASAN_OPTIONS:   
+I0322 13:26:31.499966 22395 test_util.cc:115] Environment variable LSAN_OPTIONS:   
+I0322 13:26:31.499974 22395 test_util.cc:115] Environment variable UBSAN_OPTIONS:   
+I0322 13:26:31.499979 22395 test_util.cc:115] Environment variable TSAN_OPTIONS:   
+I0322 13:26:31.500322 22395 mem_tracker.cc:158] MemTracker: hard memory limit is 8.000000 GB
+I0322 13:26:31.500339 22395 mem_tracker.cc:160] MemTracker: soft memory limit is 6.800000 GB
+/home/donghq/jinlespace/yugabyte-db/src/yb/rpc/rpc_stub-test.cc:709: Failure
+Value of: server_address.is_unspecified()
+  Actual: true
+Expected: false
+Test failure stack trace:
+/home/donghq/jinlespace/yugabyte-db/src/yb/rpc/rpc_stub-test.cc:709:                                    @           0x41b4c2  yb::rpc::RpcStubTest_IPv6_Test::TestBody()
+I0322 13:26:31.727480 22395 test_util.cc:94] -----------------------------------------------
+I0322 13:26:31.727510 22395 test_util.cc:95] Had fatal failures, leaving test files at /data/donghq/jinlespace/yugabyte-db/build/release-gcc-dynamic-community/yb-test-logs/tests-rpc__rpc_stub-test/RpcStubTest_IPv6.tmp/rpc_stub-test.RpcStubTest.IPv6.1521696391497657-22395
+[  FAILED  ] RpcStubTest.IPv6 (229 ms)
+[----------] 1 test from RpcStubTest (229 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (229 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] RpcStubTest.IPv6
+
+ 1 FAILED TEST
+I0322 13:26:31.731956 22266 run-with-timeout.cc:177] subprocess.Wait finished, waitpid() returned 256
+I0322 13:26:31.732026 22266 run-with-timeout.cc:184] Waiting for reaper thread to join
+I0322 13:26:31.732080 22396 run-with-timeout.cc:162] Reaper thread: finished=1, subprocess_is_running=0
+I0322 13:26:31.732154 22266 run-with-timeout.cc:188] Child process returned exit code 1
+I0322 13:26:31.732172 22266 run-with-timeout.cc:203] Returning exit code 1
+I0322 13:26:31.732228 22266 run-with-timeout.cc:205] Total time taken: 0.285 sec
